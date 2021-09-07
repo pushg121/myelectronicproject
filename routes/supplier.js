@@ -17,7 +17,7 @@ pool.query("insert into suppdata( supplierid,firstname,lastname,address,city,sta
   req.query.lastname,
   req.query.address,
   req.query.city,
-  
+
   req.query.state,
   req.query.zip,
   req.query.mobilenumber,
