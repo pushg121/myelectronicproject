@@ -1,0 +1,135 @@
+<style type='text/css'>
+  .root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .subdiv {
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    background: #6dabd4;
+    margin-top: 30px;
+  }
+
+
+  .ctrl {
+    padding: 10px;
+
+  }
+
+  .ctrl1 {
+    padding-top: 10px;
+
+  }
+</style>
+
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<form action="/supplier/submitrecord" method="get" enctype="multipart/form-data">
+  <div class='root'>
+    <div class="subdiv">
+      <div>
+        <h3>
+          <center>Supplier Form</center>
+        </h3>
+      </div> <br>
+      <div class="row ctrl">
+        <input type="text" name="supplierid" class="form-control" placeholder="Supplier ID" required>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="text" name="firstname" class="form-control" placeholder=" Supplier First name" required
+            pattern="[a-z A-z]+">
+        </div>
+        <div class="col">
+          <input type="text" name="lastname" class="form-control" placeholder=" Supplier Last name">
+        </div>
+      </div>
+      <div class="row ctrl">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions">
+          <label class="form-check-label">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions">
+          <label class="form-check-label">Female</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions">
+          <label class="form-check-label">Transgender</label>
+        </div>
+      </div>
+      <div class="row ctrl">
+        <input type="text" name="address" class="form-control" placeholder="Address" required>
+      </div>
+      <div class="row ctrl">
+        <div class="col-5">
+          <input type="text" name="city" class="form-control" placeholder="City" required>
+        </div>
+        <div class="col">
+          <input type="text" name="state" class="form-control" placeholder="State" required>
+        </div>
+        <div class="col">
+          <input type="text" name="zip" class="form-control" placeholder="Zip" required>
+        </div>
+      </div>
+      <div class="row ctrl">
+        <div class="col">
+          <input type="number" name="mobilenumber" class="form-control" placeholder=" Mobile Number" required>
+        </div>
+        <div class="col">
+          <input type="number" name="phonenumber" class="form-control" placeholder=" Phone Number">
+        </div>
+      </div>
+      <div class="row ctrl">
+        <input type="text" name="firmname" class="form-control" placeholder=" Firmname" required>
+      </div>
+      <div class="row ctrl">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Logo</span>
+          </div>
+          <div class="custom-file">
+            <input type="file" name="logo" class="custom-file-input">
+            <label class="custom-file-label">Choose file</label>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Picture</span>
+          </div>
+          <div class="custom-file">
+            <input type="file" name="picture" class="custom-file-input">
+            <label class="custom-file-label">Choose file</label>
+          </div>
+        </div>
+      </div>
+      <div class="row ctrl">
+        <div class="col">
+          <button type='submit' class='btn btn-primary'>Submit</button>
+        </div>
+        <div class="col">
+          <button type='Reset' class='btn btn-primary'>Reset</button>
+        </div>
+      </div>
+      <div class="row ctrl">
+        <h4 style="color: greenyellow;">
+          <%=msg%>
+        </h4>
+      </div>
+    </div>
+  </div>
+</form>
+
+</html>

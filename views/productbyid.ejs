@@ -1,0 +1,129 @@
+<style type='text/css'>
+    .root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .subdivpic {
+        width: 500px;
+        height: auto;
+        padding: 20px;
+        background: #bdc3c7;
+        margin-top: auto;
+    }
+
+    .subdiv {
+        width: 500px;
+        height: auto;
+        padding: 20px;
+        background: #bdc3c7;
+        margin-top: 30px;
+    }
+
+
+    .ctrl {
+        padding: 10px;
+
+    }
+</style>
+
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<form action="/product/editdeleterecord">
+    <div class='root'>
+        <div class="subdiv">
+            <a href="/product/displayall">Show All Product</a>
+            <h4>Edit/Delete Product</h4>
+            <input type="hidden" value="<%=Data.productid %>" name="productid">
+            <div class="row ctrl">
+                <input type='text' name="productname" value="<%=Data.productname %>" class='form-control'
+                    placeholder="Product Name">
+            </div>
+
+            <div class="row ctrl">
+                <div class="col">
+                    <input type='text' name="productrate" value="<%=Data.productrate %>" class='form-control'
+                        placeholder="Product Rate">
+                </div>
+                <div class="col">
+                    <input type='text' name="productstock" value="<%=Data.productstock %>" class='form-control'
+                        placeholder="Product Stock">
+                </div>
+
+            </div>
+
+            <div class="row ctrl">
+                <div class="col">
+                    <input type='text' name="offerprice" value="<%=Data.offerprice %>" class='form-control'
+                        placeholder="Offer Price">
+                </div>
+                <div class="col">
+                    <select name="offertype" class="form-control">
+                        <option>
+                            <%=Data.offertype %>
+                        </option>
+                        <option>Discounted</option>
+                        <option>Exchange Offer</option>
+                        <option>New</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row ctrl">
+                <textarea name="description" class='form-control'> <%=Data.description%></textarea>
+            </div>
+            <div class="row ctrl">
+                <select name="status" class='form-control'>
+                    <option>
+                        <%=Data.status%>
+                    </option>
+                    <option>Discontinue</option>
+                    <option>Coming Soon</option>
+                    <option>Continue</option>
+                </select>
+            </div>
+            <div class="row ctrl">
+                <div class="col">
+                    <button type='submit' value="Edit" name="btn" class='btn btn-primary'>Edit</button>
+                </div>
+                <div class="col">
+                    <button type='submit' value="Delete" name="btn" class='btn btn-primary'>Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form action="/product/editpicture" method="POST" enctype="multipart/form-data">
+    <div class="root">
+        <input type="hidden" value="<%=Data.productid%>" name="productid">
+        <div class="subdivpic">
+            <div class="row ctrl">
+                <div class="col">
+                    <img src="/images/<%=Data.picture%>" width="80" height="80" alt="">
+                </div>
+                <div class="col">
+                    <input type="file" name="picture" class="form-control">
+                </div>
+            </div>
+            <div class="row ctrl">
+                <button type='submit' class='btn btn-primary'>Edit Picture</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+</html>
